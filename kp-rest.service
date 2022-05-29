@@ -1,0 +1,14 @@
+[Unit]
+Description=KP Rest Spring Boot
+After=syslog.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -jar /home/sk04/kp-rest/KP_Rest-1.0.0.jar
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=kp-rest
+
+[Install]
+WantedBy=multi-user.target
